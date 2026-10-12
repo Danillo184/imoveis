@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Anuncie seu imóvel grátis | QuintoAndar</title>
+  <meta name="description" content="Tem imóvel em Governador Valadares? Conheça as vantagens de anunciar no QuintoAndar e confira a oferta de indicação.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #00a878;
+      --dark: #123c32;
+      --light: #f3f8f5;
+      --text: #26352f;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #e9efeb;
+    }
+
+    .brand {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -1px;
+    }
+
+    .brand span {
+      color: var(--green);
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 90% 15%, #d8f2e6 0, transparent 35%),
+        linear-gradient(135deg, #f3f8f5, #ffffff);
+      padding: 75px 0 65px;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #087c5a;
+      background: #dff5e9;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 57px);
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: var(--dark);
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: #53645c;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px 23px;
+      min-height: 54px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+      box-shadow: 0 8px 20px #00a87830;
+    }
+
+    .btn-primary:hover {
+      background: #008e65;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark);
+      border: 1px solid #d5e1da;
+    }
+
+    .fine-print {
+      font-size: 12px;
+      color: #6b7972;
+    }
+
+    .section {
+      padding: 65px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(27px, 4vw, 36px);
+      color: var(--dark);
+      letter-spacing: -.7px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #65736b;
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #e4ece7;
+      padding: 27px;
+      border-radius: 16px;
+      background: white;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #e4f7ed;
+      border-radius: 12px;
+      font-size: 23px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: var(--dark);
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #627068;
+      font-size: 15px;
+    }
+
+    .offer {
+      background: var(--dark);
+      color: white;
+      border-radius: 20px;
+      padding: 40px 25px;
+      text-align: center;
+    }
+
+    .offer h2 {
+      font-size: clamp(27px, 4vw, 37px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .offer p {
+      color: #d8e9e1;
+      max-width: 630px;
+      margin: 0 auto 25px;
+    }
+
+    .offer .btn {
+      background: #8df0c2;
+      color: #123c32;
+    }
+
+    .steps {
+      max-width: 700px;
+      margin: auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .step {
+      display: flex;
+      gap: 17px;
+      align-items: flex-start;
+    }
+
+    .number {
+      min-width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #ddf6e9;
+      color: #087c5a;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      color: #65736b;
+      font-size: 15px;
+    }
+
+    .final-cta {
+      background: var(--light);
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .final-cta h2 {
+      color: var(--dark);
+      font-size: clamp(27px, 4vw, 36px);
+      margin-bottom: 12px;
+    }
+
+    .final-cta p {
+      color: #65736b;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      font-size: 12px;
+      color: #77847d;
+    }
+
+    footer p + p {
+      margin-top: 8px;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 55px 0 45px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 23px;
+      }
+
+      .section {
+        padding: 48px 0;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .offer {
+        padding: 32px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <a class="brand" href="#" aria-label="Página inicial">
+        Imóvel<span>GV</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+
+        <span class="tag">PARA PROPRIETÁRIOS DE IMÓVEIS</span>
+
+        <h1>
+          Tem imóvel em Governador Valadares?
+          <span>Anuncie grátis.</span>
+        </h1>
+
+        <p class="subtitle">
+          Está pensando em alugar ou vender sua casa,
+          apartamento ou outro imóvel? Conheça o QuintoAndar
+          e veja como funciona o processo de anúncio.
+        </p>
+
+        <div class="buttons">
+          <a
+            class="btn btn-primary"
+            href="https://quin.to/drhpiada?codigo=0xVv1L"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cadastrar meu imóvel agora →
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://wa.me/5533998360805?text=Oi%21%20Quero%20saber%20mais%20sobre%20anunciar%20meu%20im%C3%B3vel."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar pelo WhatsApp
+          </a>
+        </div>
+
+        <p class="fine-print">
+          Confira as condições aplicáveis diretamente no QuintoAndar.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <h2 class="section-title">
+          Por que conhecer o QuintoAndar?
+        </h2>
+
+        <p class="section-subtitle">
+          Veja algumas das vantagens divulgadas pela plataforma
+          para quem deseja alugar ou vender um imóvel.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="icon">📸</div>
+            <h3>Fotos profissionais</h3>
+            <p>
+              Consulte as condições para fotografias profissionais
+              do imóvel durante o processo de anúncio.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🏠</div>
+            <h3>Para alugar</h3>
+            <p>
+              Conheça as condições de garantia de aluguel e a
+              cobertura para danos, conforme as regras vigentes.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🔑</div>
+            <h3>Para vender</h3>
+            <p>
+              Conheça o suporte oferecido durante o processo de
+              venda e as etapas da documentação do imóvel.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="offer">
+
+          <h2>Uma vantagem especial na indicação</h2>
+
+          <p>
+            Pelo meu link de indicação, você pode ter
+            R$ 200 de desconto na taxa de corretagem do
+            primeiro aluguel, conforme as condições da oferta.
+            Consulte os requisitos antes de concluir o cadastro.
+          </p>
+
+          <a
+            class="btn"
+            href="https://quin.to/drhpiada?codigo=0xVv1L"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Aproveitar a indicação →
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <h2 class="section-title">Como começar?</h2>
+
+        <p class="section-subtitle">
+          Siga estes passos para conhecer a plataforma.
+        </p>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="number">1</div>
+            <div>
+              <h3>Acesse o link</h3>
+              <p>
+                Entre na página oficial do QuintoAndar
+                pelo botão de cadastro.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="number">2</div>
+            <div>
+              <h3>Informe os dados do imóvel</h3>
+              <p>
+                Preencha as informações solicitadas pela plataforma
+                e confira os requisitos para anunciar.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="number">3</div>
+            <div>
+              <h3>Confira as condições</h3>
+              <p>
+                Verifique as regras do anúncio, as taxas aplicáveis
+                e as condições da oferta de indicação.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+
+        <h2>Vamos dar o próximo passo?</h2>
+
+        <p>
+          Conheça a plataforma e veja se ela atende às
+          necessidades do seu imóvel.
+        </p>
+
+        <div class="buttons">
+          <a
+            class="btn btn-primary"
+            href="https://quin.to/drhpiada?codigo=0xVv1L"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cadastrar meu imóvel agora
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://wa.me/5533998360805?text=Oi%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20anunciar%20meu%20im%C3%B3vel."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tirar dúvidas pelo WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        Página independente de indicação. Não é o site oficial
+        do QuintoAndar e não representa uma parceria institucional
+        além das condições de indicação aplicáveis.
+      </p>
+      <p>
+        Consulte os termos, a disponibilidade dos serviços e
+        as condições comerciais diretamente na plataforma.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
